@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>首页</title>
+    <!-- 外部样式表：定义页面布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 外部脚本：处理下拉菜单交互、页面动态效果等，defer属性确保DOM加载完成后执行 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：包含Logo和主导航栏 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 主导航栏：包含四个非遗项目页面 + 关于我们下拉菜单 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <!-- active类标记当前所在页面（首页），用于高亮样式 -->
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单结构：hover或点击时显示子菜单（由CSS和JS配合控制） -->
+                    <li class="dropdown" id="aboutDropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content" id="dropdownMenu">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 首屏横幅区：展示非遗核心主题，包含文字介绍和配图 -->
+            <section class="hero-banner">
+                <div class="hero-text">
+                    <h2>匠心不灭｜文脉流长</h2>
+                    <p>非物质文化遗产，是民族记忆的活态传承。我们以数字媒介为舟，渡千年匠心至未来。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 横幅配图：展示非遗文化意象，路径指向images文件夹 -->
+                    <img src="images/index.jpg" alt="非遗文化意象">
+                </div>
+            </section>
+
+            <!-- 非遗项目展示区：八个卡片，每个卡片代表一个非遗项目 -->
+            <section>
+                <h2 class="section-title">探寻非遗瑰宝</h2>
+                <!-- 卡片容器：使用flex或grid布局实现响应式卡片排列 -->
+                <div class="card-container">
+                    <!-- 昆曲卡片 -->
+                    <div class="card">
+                        <img src="images/kunqu.jpg" alt="昆曲">
+                        <div class="card-info">
+                            <h3>昆曲</h3>
+                            <p>百戏之祖，水磨雅韵。六百年流觞曲水，一唱三叹。</p>
+                        </div>
+                    </div>
+                    <!-- 中国书法卡片 -->
+                    <div class="card">
+                        <img src="images/calligraphy.jpg" alt="书法">
+                        <div class="card-info">
+                            <h3>中国书法</h3>
+                            <p>无色而具画图之灿烂，无声而有音乐之和谐。</p>
+                        </div>
+                    </div>
+                    <!-- 中国剪纸卡片 -->
+                    <div class="card">
+                        <img src="images/papercut.jpg" alt="剪纸">
+                        <div class="card-info">
+                            <h3>中国剪纸</h3>
+                            <p>方寸之间，万象乾坤。指尖镂空艺术，寄托乡土记忆。</p>
+                        </div>
+                    </div>
+                    <!-- 皮影戏卡片 -->
+                    <div class="card">
+                        <img src="images/shadowplay.jpg" alt="皮影">
+                        <div class="card-info">
+                            <h3>皮影戏</h3>
+                            <p>一帘灯影，千古事。光影跃动，演绎世间悲欢。</p>
+                        </div>
+                    </div>
+                    <!-- 珠算卡片 -->
+                    <div class="card">
+                        <img src="images/zhusuan.jpg" alt="珠算">
+                        <div class="card-info">
+                            <h3>珠算</h3>
+                            <p>珠落玉盘，算启智慧。中国古代计算机的数学魅力。</p>
+                        </div>
+                    </div>
+                    <!-- 古琴艺术卡片 -->
+                    <div class="card">
+                        <img src="images/guqin.jpg" alt="古琴艺术">
+                        <div class="card-info">
+                            <h3>古琴艺术</h3>
+                            <p>清音雅韵，太古遗音。三千载国乐之父，文人四艺之首。</p>
+                        </div>
+                    </div>
+                    <!-- 中医针灸卡片 -->
+                    <div class="card">
+                        <img src="images/zhenjiu.jpg" alt="中医针灸">
+                        <div class="card-info">
+                            <h3>中医针灸</h3>
+                            <p>千年针迹，医道岐黄。以经络理论守护人类健康。</p>
+                        </div>
+                    </div>
+                    <!-- 春节卡片 -->
+                    <div class="card">
+                        <img src="images/chunjie.jpg" alt="春节">
+                        <div class="card-info">
+                            <h3>春节</h3>
+                            <p>爆竹辞旧，春风送暖。中华民族最盛大的传统节日。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 引言区块：强调非遗的活态属性，增加页面文化氛围 -->
+            <div class="quote-block">
+                <p>“非遗不是尘封的文物，而是活态的文化实践。”</p>
+            </div>
+        </main>
+
+        <!-- 页脚：版权及团队信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 03班09组 | 首页</p>
+        </footer>
+    </div>
+</body>
+</html>
