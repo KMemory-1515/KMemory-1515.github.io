@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>中国剪纸</title>
+    <!-- 复用全站统一样式：引用外部CSS文件，定义全局布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 复用下拉菜单等交互逻辑：defer属性确保DOM加载完成后执行脚本 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（剪纸）高亮显示active样式 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <!-- active类标记当前所在页面（中国剪纸），用于CSS高亮样式 -->
+                    <li><a href="papercut.html" class="active">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 页面主标题：中国剪纸 -->
+            <h2 class="section-title">中国剪纸</h2>
+            <!-- 剪纸介绍区：包含文字介绍和配图 -->
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <p>剪纸是中国最古老的民间装饰艺术之一，以剪刀或刻刀为工具，在纸张上镂空剪刻，创造出千姿百态的图案。一张红纸，一把剪刀，方寸之间，万象乾坤。</p>
+                    <p>2009年，中国剪纸被联合国教科文组织列入人类非物质文化遗产代表作名录。从北方的粗犷豪放到南方的细腻玲珑，从陕西剪纸的质朴雄浑到蔚县剪纸的点彩斑斓，剪纸艺术在不同地域绽放出各异的光彩。</p>
+                    <p>指尖镂空艺术，寄托乡土记忆。一把剪刀，一张红纸，剪出的是图案，留下的是中华民族千年的审美与智慧。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 剪纸配图 -->
+                    <img src="images/papercut.jpg" alt="中国剪纸">
+                </div>
+            </div>
+            <!-- 多媒体区：嵌入剪纸视频供用户在线观赏 -->
+            <div class="media-section">
+                <h3 class="section-title" style="font-size:1.5rem;">观赏中国剪纸</h3>
+                <div class="media-wrapper">
+                    <div class="video-block">
+                        <h3>中国剪纸片段欣赏</h3>
+                        <!-- video标签配合controls属性显示播放控件，支持MP4格式 -->
+                        <video controls width="100%">
+                            <!-- 视频源：指向video文件夹下的papercut.mp4文件 -->
+                            <source src="video/papercut.mp4" type="video/mp4">
+                            <!-- 备选提示：当浏览器不支持video标签时显示 -->
+                            您的浏览器不支持 video 标签。
+                        </video>
+                    </div>
+                </div>
+            </div>        
+        </main>
+
+        <!-- 页脚：版权及团队归属信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 03班09组 | 中国剪纸页面 </p>
+        </footer>
+    </div>
+</body>
+
+</html>

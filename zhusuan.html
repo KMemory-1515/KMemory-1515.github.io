@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>珠算</title>
+    <!-- 复用全站统一样式：引用外部CSS文件，定义全局布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 交互脚本：处理下拉菜单等交互逻辑 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（珠算）高亮显示active样式 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <!-- active类标记当前所在页面（珠算），用于CSS高亮样式 -->
+                    <li><a href="zhusuan.html" class="active">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 页面主标题：珠算 -->
+            <h2 class="section-title">珠算</h2>
+            <!-- 珠算介绍区：包含文字介绍和配图 -->
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <p>中国珠算是以算盘为工具进行数学计算的一种方法，被誉为“中国古代计算机”。它蕴含着精妙的数学逻辑和独特的数理内涵，体现了中华民族的非凡创造力。2013年，中国珠算被联合国教科文组织列入人类非物质文化遗产代表作名录。</p>
+                    <p style="margin-top: 12px;">算盘通常由框、梁、档、珠四部分组成，遵循“五升十进制”的运算规则——满5用上珠表示，满10向前一档进位。一把小小的算盘，用简单的算珠，演绎出精妙的数学智慧。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 珠算配图 -->
+                    <img src="images/zhusuan.jpg" alt="中国珠算">
+                </div>
+            </div>
+            <!-- 多媒体区：嵌入音频供用户学习珠算口诀 -->
+            <div class="media-section">
+                <h3 class="section-title" style="font-size:1.5rem;">指尖上的智慧</h3>
+                <div class="media-wrapper">
+                    <div class="audio-block">
+                        <h3>学习珠算口诀</h3>
+                        <!-- audio标签配合controls属性显示播放控件，src指向外部示例音频文件 -->
+                        <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">您的浏览器不支持音频。</audio>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚：版权及团队归属信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 09组文化遗产之旅 | 珠算页面</p>
+        </footer>
+    </div>
+</body>
+
+</html>

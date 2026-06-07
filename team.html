@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>小组介绍</title>
+    <!-- 复用全站统一样式：引用外部CSS文件，定义全局布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 复用下拉菜单等交互逻辑：defer属性确保DOM加载完成后执行脚本 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（小组介绍）在下拉菜单中高亮显示 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown" id="aboutDropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content" id="dropdownMenu">
+                            <!-- active类标记当前所在页面（小组介绍），用于CSS高亮样式 -->
+                            <li><a href="team.html" class="active">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 团队介绍区域：包含团队描述和成员卡片 -->
+            <section class="team-intro">
+                <h2 class="section-title">我们的团队</h2>
+                <!-- 团队描述区块：简要介绍班级、小组和网站主题 -->
+                <div class="team-desc">
+                    <p>我们是来自03班09组的同学，热衷于中华优秀传统文化的现代传承。本网站以“文化遗产之旅”为主题，呈现非遗瑰宝，践行Web技术弘扬文化自信。
+                    </p>
+                </div>
+                <!-- 成员卡片网格：展示每位组员的分工 -->
+                <div class="members-grid">
+                    <!-- 组长：王孜旭 -->
+                    <div class="member-card">
+                        <h3>王孜旭（组长）</h3>
+                        <p>确定主题，设计主页面及CSS框架确保全局样式统一，负责最后校对</p>
+                    </div>
+                    <!-- 组员：史伯聪 -->
+                    <div class="member-card">
+                        <h3>史伯聪</h3>
+                        <p>负责收集昆曲和中国书法部分的内容收集、图文编辑、音频集成与页面制作</p>
+                    </div>
+                    <!-- 组员：李金桥 -->
+                    <div class="member-card">
+                        <h3>李金桥</h3>
+                        <p>负责收集中国剪纸和皮影戏部分的内容收集、图文编辑、音频集成与页面制作</p>
+                    </div>
+                    <!-- 组员：张铁凡 -->
+                    <div class="member-card">
+                        <h3>张铁凡</h3>
+                        <p>负责珠算和古琴艺术页面的内容收集、图文编辑、音频集成与页面制作</p>
+                    </div>
+                    <!-- 组员：周子杰 -->
+                    <div class="member-card">
+                        <h3>周子杰</h3>
+                        <p>负责中医针灸和春节页面的内容收集、图文编辑、音频集成与页面制作</p>
+                    </div>
+                    <!-- 组员：张文浩 -->
+                    <div class="member-card">
+                        <h3>张文浩</h3>
+                        <p>负责开发JS交互部分、小组成员介绍的页面制作</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚：版权及团队信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 03班09组 | 小组成员页面</p>
+        </footer>
+    </div>
+</body>
+
+</html>

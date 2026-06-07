@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>中国书法</title>
+    <!-- 复用全站统一样式：引用外部CSS文件，定义全局布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 复用下拉菜单等交互逻辑：defer属性确保DOM加载完成后执行脚本 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（书法）高亮显示active样式 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <!-- active类标记当前所在页面（中国书法），用于CSS高亮样式 -->
+                    <li><a href="calligraphy.html" class="active">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 页面主标题：书法 -->
+            <h2 class="section-title">书法</h2>
+            <!-- 书法介绍区：包含文字介绍和配图-->
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <!-- 第一段：介绍书法的工具、线条变化、字体演变历程 -->
+                    <p>中国书法以笔、墨、纸、砚为工具，通过线条的刚柔、疏密、浓淡变化，表达深邃的意境与情感。从甲骨文的稚拙古朴，到篆书的圆转婉通；从隶书的蚕头燕尾，到草书的奔放不羁；从楷书的端庄严谨，到行书的行云流水——真草隶篆，各美其美。</p>
+                    <!-- 第二段：说明书法被列入联合国非遗名录的时间及意义 -->
+                    <p>2009年，中国书法被联合国教科文组织列入人类非物质文化遗产代表作名录。一管柔毫，一张宣纸，墨香氤氲间，三千年的文字在笔尖重生。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 书法配图：展示书法作品或书写场景，alt属性未填写，建议补充 -->
+                    <img src="images/calligraphy.jpg">
+                </div>
+            </div>
+            <!-- 多媒体区：嵌入书法视频供用户在线观赏 -->
+            <div class="media-section">
+                <h3 class="section-title" style="font-size:1.5rem;">观赏中国书法</h3>
+                <div class="media-wrapper">
+                    <div class="video-block">
+                        <h3>中国书法片段欣赏</h3>
+                        <!-- video标签配合controls属性显示播放控件，支持MP4格式 -->
+                        <video controls width="100%">
+                            <!-- 视频源：指向video文件夹下的calligraphy.mp4文件 -->
+                            <source src="video/calligraphy.mp4" type="video/mp4">
+                            <!-- 备选提示：当浏览器不支持video标签时显示 -->
+                            您的浏览器不支持 video 标签。
+                        </video>
+                    </div>
+                </div>
+            </div>    
+        </main>
+
+        <!-- 页脚：版权及团队归属信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 03班09组 | 中国书法页面 </p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>皮影戏</title>
+    <!-- 复用全站统一样式：引用外部CSS文件，定义全局布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 复用下拉菜单等交互逻辑：defer属性确保DOM加载完成后执行脚本 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（皮影戏）高亮显示active样式 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <!-- active类标记当前所在页面（皮影戏），用于CSS高亮样式 -->
+                    <li><a href="shadowplay.html" class="active">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 页面主标题：皮影戏 -->
+            <h2 class="section-title">皮影戏</h2>
+            <!-- 皮影戏介绍区：包含文字介绍和配图 -->
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <p>皮影戏历史悠久，最早可追溯至西汉时期，距今已有两千多年。它集绘画、雕刻、表演、音乐于一体，是光影交织的民间艺术瑰宝。一张兽皮，经雕刻、上色、熨烫，化作栩栩如生的影人；一盏油灯，将影子投射于白布之上，在锣鼓丝竹声中，演绎千秋故事。</p>
+                    <p>2011年，中国皮影戏被联合国教科文组织列入人类非物质文化遗产代表作名录。皮影戏的唱腔因地而异，陕西碗碗腔婉转动听，唐山皮影高亢嘹亮，湖南皮影则融入湘剧韵味。操纵皮影的艺人十指翻飞，一人能同时操控三四个影人，刀枪剑戟，翻腾打斗，栩栩如生。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 皮影戏配图 -->
+                    <img src="images/shadowplay.jpg" alt="皮影戏艺术">
+                </div>
+            </div>
+
+            <!-- 多媒体区：嵌入皮影戏视频供用户在线观赏 -->
+            <div class="media-section">
+                <h3 class="section-title" style="font-size:1.5rem;">观赏皮影戏影</h3>
+                <div class="media-wrapper">
+                    <div class="video-block">
+                        <h3>皮影戏经典片段</h3>
+                        <!-- video标签配合controls属性显示播放控件，支持MP4格式 -->
+                        <video controls width="100%">
+                            <!-- 视频源：指向video文件夹下的shadowplay.mp4文件 -->
+                            <source src="video/shadowplay.mp4" type="video/mp4">
+                            <!-- 备选提示：当浏览器不支持video标签时显示 -->
+                            您的浏览器不支持 video 标签。
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚：版权及团队归属信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 03班09组 | 皮影戏页面</p>
+        </footer>
+    </div>
+</body>
+
+</html>

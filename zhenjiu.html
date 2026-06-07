@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>中医针灸</title>
+    <!-- 复用全站统一样式：引用外部CSS文件，定义全局布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 复用下拉菜单等交互逻辑：defer属性确保DOM加载完成后执行脚本 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（中医针灸）高亮显示active样式 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <!-- active类标记当前所在页面（中医针灸），用于CSS高亮样式 -->
+                    <li><a href="zhenjiu.html" class="active">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 页面主标题：中医针灸 -->
+            <h2 class="section-title">中医针灸</h2>
+            <!-- 针灸介绍区：包含文字介绍和配图 -->
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <p>针灸是针法和灸法的合称，起源于新石器时代，是中医学的重要组成部分。它以经络理论为基础，通过刺激人体穴位调节气血，达到预防和治疗疾病的目的。2010年，中医针灸被联合国教科文组织列入人类非物质文化遗产代表作名录。</p>
+                    <p>针灸已在全球183个国家和地区得到应用，能够治疗500多种疾病。从战国《黄帝内经》到明代杨继洲的《针灸大成》，针灸学术思想历经两千余年传承发展，至今仍在守护人类健康。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 针灸配图 -->
+                    <img src="images/zhenjiu.jpg" alt="中医针灸">
+                </div>
+            </div>
+            <!-- 多媒体区：嵌入视频供用户了解针灸疗法 -->
+            <div class="media-section">
+                <h3 class="section-title" style="font-size:1.5rem;">了解针灸之道</h3>
+                <div class="media-wrapper">
+                    <div class="video-block">
+                        <h3>中医针灸疗法介绍</h3>
+                        <!-- video标签配合controls属性显示播放控件，支持MP4格式 -->
+                        <video controls width="100%">
+                            <!-- 视频源：指向video文件夹下的zhenjiu.mp4文件 -->
+                            <source src="video/zhenjiu.mp4" type="video/mp4">
+                            <!-- 备选提示：当浏览器不支持video标签时显示 -->
+                            您的浏览器不支持 video 标签。
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚：版权及团队归属信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 09组文化遗产之旅 | 中医针灸页面</p>
+        </footer>
+    </div>
+</body>
+
+</html>

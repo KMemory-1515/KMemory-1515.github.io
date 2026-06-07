@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>昆曲</title>
+    <!-- 复用首页样式，保持全站风格统一：引用外部CSS文件 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 复用下拉菜单等交互逻辑：defer属性确保DOM加载完成后执行脚本 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（昆曲）高亮显示active样式 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <!-- active类标记当前所在页面（昆曲），用于CSS高亮样式 -->
+                    <li><a href="kunqu.html" class="active">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 页面主标题：昆曲 -->
+            <h2 class="section-title">昆曲</h2>
+            <!-- 昆曲介绍区：包含文字介绍和配图 -->
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <p>昆曲发源于元末明初的苏州昆山一带，唱腔华丽婉转，念白儒雅细腻，被誉为“百戏之祖”。</p>
+                    <p>2008年，昆曲被联合国教科文组织列入人类非物质文化遗产代表作名录。水磨雅韵，六百年流觞曲水，一唱三叹。昆曲以“无声不歌，无动不舞”为审美极致，在生旦净末丑的行当中，演绎才子佳人的悲欢离合。从《牡丹亭》中杜丽娘的“原来姹紫嫣红开遍”，到《长生殿》里唐明皇与杨贵妃的千古绝恋，昆曲以一腔一板、一字一泪，将中国古典美学推向了巅峰。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 昆曲配图 -->
+                    <img src="images/kunqu.jpg" alt="昆曲艺术">
+                </div>
+            </div>
+
+            <!-- 多媒体区：嵌入昆曲音频供用户在线聆听 -->
+            <div class="media-section">
+                <h3 class="section-title" style="font-size:1.5rem;">聆听昆曲雅韵</h3>
+                <div class="media-wrapper">
+                    <div class="audio-block">
+                        <h3>昆曲选段</h3>
+                        <!-- audio标签配合controls属性显示播放控件，src指向music文件夹下的kunqu.mp3文件 -->
+                        <audio controls src="music/kunqu.mp3">您的浏览器不支持音频。</audio>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚：版权及团队归属信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 03班09组 | 昆曲页面 </p>
+        </footer>
+    </div>
+</body>
+
+</html>

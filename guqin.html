@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>古琴艺术</title>
+    <!-- 复用全站统一样式：引用外部CSS文件，定义全局布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 复用下拉菜单等交互逻辑：defer属性确保DOM加载完成后执行脚本 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（古琴艺术）高亮显示active样式 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <!-- active类标记当前所在页面（古琴艺术），用于CSS高亮样式 -->
+                    <li><a href="guqin.html" class="active">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <li><a href="chunjie.html">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 页面主标题：古琴艺术 -->
+            <h2 class="section-title">古琴艺术</h2>
+            <!-- 古琴介绍区：包含文字介绍和配图 -->
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <p>古琴是中国最古老的弹拨乐器之一，有三千多年历史，被尊为“国乐之父”。古琴艺术融合了儒家“中和”与道家“自然”的哲学思想，是中国文人精神修养的象征。2003年，古琴艺术被联合国教科文组织列入人类非物质文化遗产代表作名录。</p>
+                    <p style="margin-top: 12px;">在“琴棋书画”文人四艺中，“琴”专指古琴。古琴的音色分为散音、泛音、按音，分别象征天、地、人三籁。唐代蜀中雷威所制的“彩凤鸣岐”琴，至今仍被视为传世珍宝。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 古琴配图 -->
+                    <img src="images/guqin.jpg" alt="古琴艺术">
+                </div>
+            </div>
+            <!-- 多媒体区：嵌入音频供用户聆听古琴名曲 -->
+            <div class="media-section">
+                <h3 class="section-title" style="font-size:1.5rem;">聆听千年琴韵</h3>
+                <div class="media-wrapper">
+                    <div class="audio-block">
+                        <h3>古琴名曲《流水》</h3>
+                        <!-- audio标签配合controls属性显示播放控件，src指向music文件夹下的guqin.mp3文件 -->
+                        <audio controls src="music/guqin.mp3">您的浏览器不支持音频。</audio>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚：版权及团队归属信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 09组文化遗产之旅 | 古琴艺术页面</p>
+        </footer>
+    </div>
+</body>
+
+</html>

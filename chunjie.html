@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置：确保页面在移动端正常缩放，允许用户手动缩放以提升可访问性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>春节</title>
+    <!-- 复用全站统一样式：引用外部CSS文件，定义全局布局、卡片样式、响应式等 -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 复用下拉菜单等交互逻辑：defer属性确保DOM加载完成后执行脚本 -->
+    <script src="javascript/index.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面容器：限制最大宽度并居中，包裹所有内容 -->
+    <div id="wrapper">
+        <!-- 页眉区域：Logo + 主导航 -->
+        <header id="page-header">
+            <div class="logo-area">
+                <h1>🏮 文化遗产之旅</h1>
+                <p>弘扬匠心 | 守护文脉</p>
+            </div>
+            <!-- 导航栏：当前页面（春节）高亮显示active样式 -->
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kunqu.html">昆曲</a></li>
+                    <li><a href="calligraphy.html">中国书法</a></li>
+                    <li><a href="papercut.html">中国剪纸</a></li>
+                    <li><a href="shadowplay.html">皮影戏</a></li>
+                    <li><a href="zhusuan.html">珠算</a></li>
+                    <li><a href="guqin.html">古琴艺术</a></li>
+                    <li><a href="zhenjiu.html">中医针灸</a></li>
+                    <!-- active类标记当前所在页面（春节），用于CSS高亮样式 -->
+                    <li><a href="chunjie.html" class="active">春节</a></li>
+                    <!-- 下拉菜单：关于我们，子项为小组介绍 -->
+                    <li class="dropdown" id="aboutDropdown">
+                        <!-- href="javascript:void(0);" 防止点击时页面跳转或刷新，仅作为交互触发器 -->
+                        <a href="javascript:void(0);" class="dropbtn">关于我们 ▼</a>
+                        <!-- 下拉菜单内容，默认隐藏，由CSS或JS控制显示 -->
+                        <ul class="dropdown-content" id="dropdownMenu">
+                            <li><a href="team.html">小组介绍</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主内容区域：页面的核心内容 -->
+        <main id="main-content">
+            <!-- 页面主标题：春节 -->
+            <h2 class="section-title">春节</h2>
+            <!-- 春节介绍区：包含文字介绍和配图 -->
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <p>春节，又称农历新年，是中华民族最隆重、最盛大的传统节日，已有四千多年历史。春节起源于殷商时期岁末的祭祀活动，承载着辞旧迎新、祈福纳祥的美好寓意。2024年，春节被联合国教科文组织列入人类非物质文化遗产代表作名录。</p>
+                    <p style="margin-top: 12px;">春节的习俗丰富多彩：贴春联、挂年画、守岁、拜年、放鞭炮、舞龙舞狮、发压岁钱……每一个仪式都凝聚着中国人对团圆、和谐与幸福的向往。除夕之夜，万家灯火，阖家团聚，共吃年夜饭，是春节最温馨的时刻。</p>
+                </div>
+                <div class="hero-img">
+                    <!-- 春节配图 -->
+                    <img src="images/chunjie.jpg" alt="春节">
+                </div>
+            </div>
+            <!-- 多媒体区：嵌入视频和音频，营造春节氛围 -->
+            <div class="media-section">
+                <h3 class="section-title" style="font-size:1.5rem;">感受年味时刻</h3>
+                <!-- 视频区块 -->
+                <div class="media-wrapper">
+                    <div class="video-block">
+                        <h3>舞龙舞狮</h3>
+                        <!-- video标签配合controls属性显示播放控件，支持MP4格式 -->
+                        <video controls width="100%">
+                            <!-- 视频源：指向video文件夹下的chunjie.mp4文件 -->
+                            <source src="video/chunjie.mp4" type="video/mp4">
+                            <!-- 备选提示：当浏览器不支持video标签时显示 -->
+                            您的浏览器不支持 video 标签。
+                        </video>
+                    </div>
+                </div>
+                <!-- 音频区块 -->
+                <div class="media-wrapper">
+                    <div class="audio-block">
+                        <h3>喜庆之声《春节序曲》</h3>
+                        <!-- audio标签配合controls属性显示播放控件，src指向music文件夹下的chunjie.mp3文件 -->
+                        <audio controls src="music/chunjie.mp3">您的浏览器不支持音频。</audio>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚：版权及团队归属信息，位于页面底部 -->
+        <footer id="page-footer">
+            <p>© 2026 文化之韵非遗传承 | 03班09组 | 春节页面</p>
+        </footer>
+    </div>
+</body>
+
+</html>
