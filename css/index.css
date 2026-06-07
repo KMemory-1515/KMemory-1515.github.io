@@ -1,0 +1,407 @@
+/* ==================== 全局样式 ==================== */
+/* 通用选择器：重置所有元素的外边距和内边距，统一盒模型为border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* 盒模型设为border-box，宽高包含内边距和边框 */
+}
+
+/* 页面主体样式：设置字体、背景色、文字颜色和行高 */
+body {
+    font-family: 'Segoe UI', 'Noto Sans CJK SC', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #fef7e8;   /* 暖色背景，营造传统文化氛围 */
+    color: #2d2a24;              /* 深灰褐色文字，柔和护眼 */
+    line-height: 1.5;              /* 1.5倍行高，提升阅读体验 */
+}
+
+/* ==================== 页面容器 ==================== */
+/* 最外层容器：限制最大宽度，大屏居中，添加阴影和圆角 */
+#wrapper {
+    max-width: 1280px;                             /* 限制最大宽度，大屏居中 */
+    margin: 0 auto;                                /* 水平居中 */
+    background-color: #ffffff;                   /* 白色背景，与body暖色形成层次 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 轻微阴影增加立体感 */
+    border-radius: 0 0 20px 20px;                  /* 底部圆角 */
+    overflow: hidden;                              /* 隐藏溢出内容，保持圆角效果 */
+}
+
+/* ==================== 页眉区域 ==================== */
+/* 页眉整体样式：红棕色背景，白色文字 */
+#page-header {
+    background: #9e2a2b;      /* 红基调，象征传统文化热情 */
+    color: #fff;
+    padding: 1rem 2rem 0 2rem;
+    border-bottom: 5px solid #d9b48b;  /* 金色装饰线 */
+}
+
+/* Logo区域主标题：较大字号，字间距加宽，带文字阴影 */
+.logo-area h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;       
+    font-weight: 600;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* 阴影增强立体感 */
+}
+
+/* Logo区域副标题：较小字号，半透明效果 */
+.logo-area p {
+    font-size: 0.95rem;
+    opacity: 0.85;             /* 半透明，层次分明 */
+    margin-top: 0.25rem;
+}
+
+/* ==================== 导航栏 ==================== */
+/* 导航栏容器：与页眉保持间距 */
+#main-nav {
+    margin-top: 1rem;
+}
+
+/* 导航列表：Flex布局支持换行，深红色背景，顶部圆角 */
+.nav-list {
+    display: flex;
+    list-style: none;             /* 移除列表默认圆点 */
+    flex-wrap: wrap;              /* 小屏幕时自动换行 */
+    gap: 0.2rem;                  /* 菜单项之间微小间距 */
+    background-color: #7e2324;  /* 比页眉稍深的红色，形成层次 */
+    border-radius: 40px 40px 0 0; /* 顶部圆角，与页眉过渡 */
+    padding: 0 1rem;
+}
+
+/* 导航项相对定位，为下拉菜单提供定位参考 */
+.nav-list li {
+    position: relative;
+}
+
+/* 导航链接样式：内边距、圆角、过渡动画 */
+.nav-list li a {
+    display: inline-block;
+    padding: 0.8rem 1.3rem;
+    color: #fff9ef;
+    text-decoration: none;     /* 移除下划线 */
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease; /* 平滑过渡效果 */
+    border-radius: 30px;       /* 圆角胶囊样式 */
+}
+
+/* 悬停及当前页高亮样式：浅金色背景，深红文字，轻微阴影 */
+.nav-list li a:hover,
+.nav-list li a.active {
+    background-color: #f5cba0;
+    color: #5a1e1f;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 下拉菜单 ==================== */
+/* 下拉菜单容器：相对定位，用于定位子菜单 */
+.dropdown {
+    position: relative;
+}
+
+/* 下拉菜单内容：默认隐藏，绝对定位浮出 */
+.dropdown-content {
+    display: none;             /* 默认隐藏，由JS或hover控制显示 */
+    position: absolute;        /* 绝对定位，脱离文档流 */
+    background-color: #fff9f0;
+    min-width: 150px;          /* 最小宽度保证内容不拥挤 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 阴影增强浮出感 */
+    z-index: 10;               /* 确保浮在其他内容上方 */
+    border-radius: 12px;       /* 圆角边框 */
+    overflow: hidden;          /* 圆角裁剪溢出内容 */
+    top: 100%;                 /* 位于父元素正下方 */
+    left: 0;
+    margin-top: 4px;           /* 与父菜单的间距 */
+}
+
+/* 下拉菜单列表项：重置列表样式 */
+.dropdown-content li {
+    list-style: none;
+}
+
+/* 下拉菜单链接：深红文字，块级显示占满宽度 */
+.dropdown-content li a {
+    color: #7e2324;
+    padding: 0.75rem 1rem;
+    display: block;
+    text-align: left;
+    font-weight: normal;
+    background-color: #fff9f0;
+}
+
+/* 下拉菜单链接悬停：浅杏色背景 */
+.dropdown-content li a:hover {
+    background-color: #fae6cd;
+    color: #9e2a2b;
+}
+
+/* 鼠标悬停时显示下拉菜单（备用方案，与JS互补） */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ==================== 主内容区 ==================== */
+/* 主内容区内边距，与页眉页脚保持舒适间距 */
+#main-content {
+    padding: 2rem 2rem 1.5rem 2rem;
+}
+
+/* 图文展示横幅：Flex布局，渐变背景，大圆角 */
+.hero-banner {
+    display: flex;
+    flex-wrap: wrap;           /* 小屏幕时换行 */
+    gap: 2rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #fff3e0 100%); /* 暖色渐变 */
+    border-radius: 32px;
+    padding: 1.8rem;
+    margin-bottom: 3rem;
+    align-items: center;       /* 垂直居中对齐 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 文字区域：占据更多弹性空间 */
+.hero-text {
+    flex: 1.2;
+}
+
+/* 横幅内二级标题：红棕色，左侧金色边框装饰 */
+.hero-text h2 {
+    font-size: 2rem;
+    color: #9e2a2b;
+    border-left: 6px solid #d9b48b; /* 左侧装饰线 */
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* 横幅内段落文字 */
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #3a3229;
+}
+
+/* 图片区域：弹性占位，文字居中 */
+.hero-img {
+    flex: 1;
+    text-align: center;
+}
+
+/* 横幅图片：响应式宽度，圆角边框，阴影，悬浮微放大 */
+.hero-img img {
+    max-width: 100%;
+    border-radius: 28px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 2px solid #e7cfb0;
+}
+
+.hero-img img:hover {
+    transform: scale(1.01);    /* 悬浮时轻微放大 */
+}
+
+/* 章节标题 + 金色下划线：居中显示，带下划线装饰 */
+.section-title {
+    font-size: 1.9rem;
+    text-align: center;
+    margin: 1.5rem 0 1rem 0;
+    color: #5e2a2c;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* 章节标题伪元素：金色下划线 */
+.section-title:after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #d9b48b;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ==================== 卡片网格（首页非遗展示） ==================== */
+/* 卡片容器：Flex布局，居中，允许换行 */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;   /* 卡片居中排列 */
+    margin: 2rem 0;
+}
+
+/* 单个卡片：弹性占位，最小宽度250px，圆角阴影，悬浮上浮 */
+.card {
+    flex: 1;
+    min-width: 250px;          /* 最小宽度保证移动端可读性 */
+    background: #ffffff;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s ease;
+    border: 1px solid #f3e5cf;
+}
+
+.card:hover {
+    transform: translateY(-6px);    /* 悬停上浮效果 */
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* 卡片图片：宽100%，固定高度，cover裁剪保持比例 */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;   /* 图片裁剪适配，保持比例 */
+    display: block;
+    background-color: #eee5d8; /* 图片加载时的占位背景色 */
+}
+
+/* 卡片内容区域：内边距 */
+.card-info {
+    padding: 1.3rem;
+}
+
+/* 卡片标题：红棕色 */
+.card-info h3 {
+    color: #9e2a2b;
+    margin-bottom: 0.7rem;
+    font-size: 1.4rem;
+}
+
+/* ==================== 多媒体区域（音频/视频） ==================== */
+/* 多媒体区块：浅杏色背景，大圆角 */
+.media-section {
+    background: #fff7ef;
+    border-radius: 32px;
+    margin: 2rem 0;
+    padding: 0.5rem 1.5rem 2rem 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* 多媒体内容包装器：Flex布局，支持换行 */
+.media-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 0.8rem;
+}
+
+/* 音频/视频区块：半透白背景，圆角阴影 */
+.audio-block,
+.video-block {
+    flex: 1;
+    background: #ffffffde;     /* 白色带轻微透明 */
+    padding: 1.2rem;
+    border-radius: 28px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 媒体元素（音频/视频）：占满宽度，圆角 */
+audio,
+video {
+    width: 100%;
+    border-radius: 20px;
+    outline: none;             /* 移除聚焦轮廓 */
+}
+
+/* 引言引用块：不规则圆角（左上右下大圆角），斜体，左侧红边框 */
+.quote-block {
+    background: #ede4d5;
+    padding: 1.8rem;
+    border-radius: 80px 20px 80px 20px;  /* 不规则圆角 */
+    text-align: center;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #5e2a2c;
+    border-left: 8px solid #9e2a2b;
+}
+
+/* ==================== 页脚 ==================== */
+/* 页脚样式：深色背景，浅色文字，顶部分隔线 */
+#page-footer {
+    background-color: #2b2520;
+    color: #dfcfbc;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    border-top: 5px solid #d9b48b; /* 金色顶边延续页眉装饰 */
+}
+
+/* ==================== 小组介绍页面专属样式 ==================== */
+/* 团队介绍区块：白色背景，圆角 */
+.team-intro {
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 1rem 1.5rem 2rem;
+}
+
+/* 团队描述区块：浅杏色背景，居中文字 */
+.team-desc {
+    background: #faf3e8;
+    padding: 1.2rem;
+    border-radius: 28px;
+    margin: 1rem 0 2rem;
+    font-size: 1.05rem;
+    text-align: center;
+    color: #382e25;
+}
+
+/* 成员卡片网格：Grid布局，强制三列等宽，实现上三下三效果 */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 三列等宽，每行三个卡片 */
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+/* 成员卡片样式：浅米色背景，圆角，居中文字，悬浮上浮 */
+.member-card {
+    background: #fffcf5;
+    border-radius: 32px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+    border: 1px solid #ecdbba;
+    min-width: 0;              
+    width: 100%;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    background: #fff7ed;
+}
+
+/* 成员卡片标题：红棕色，较大字号 */
+.member-card h3 {
+    color: #9e2a2b;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ==================== 响应式布局 ==================== */
+/* 响应式断点：屏幕宽度≤800px时应用以下样式 */
+@media (max-width: 800px) {
+    /* 导航列表居中，圆角调整 */
+    .nav-list {
+        justify-content: center;
+        border-radius: 30px;
+    }
+
+    /* 横幅标题字号适当缩小 */
+    .hero-text h2 {
+        font-size: 1.6rem;
+    }
+
+    /* 主内容区内边距减小 */
+    #main-content {
+        padding: 1.2rem;
+    }
+
+    /* 小屏幕时下拉菜单右对齐，避免左侧溢出屏幕 */
+    .dropdown-content {
+        left: auto;
+        right: 0;
+    }
+}
